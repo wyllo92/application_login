@@ -52,10 +52,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
           key: _formKey,
           child: ListView(
             children: [
-              Image.asset(
-                'assets/img/logos/stamp.webp',
-                height: 100,
-              ), // Image.asset
+              Image.asset('assets/img/logos/stamp.webp', height: 100),
               const SizedBox(height: 20),
               TextFormField(
                 controller: _usernameController,
@@ -63,14 +60,14 @@ class _UserFormScreenState extends State<UserFormScreen> {
                   labelText: 'Usuario',
                   prefixIcon: Icon(Icons.person),
                   border: OutlineInputBorder(),
-                ), // InputDecoration
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor ingrese un usuario';
                   }
                   return null;
                 },
-              ), // TextFormField
+              ),
               const SizedBox(height: 20),
               TextFormField(
                 controller: _emailController,
@@ -78,7 +75,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
                   labelText: 'Email',
                   prefixIcon: Icon(Icons.email),
                   border: OutlineInputBorder(),
-                ), // InputDecoration
+                ),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -89,7 +86,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
                   }
                   return null;
                 },
-              ), // TextFormField
+              ),
               const SizedBox(height: 20),
               TextFormField(
                 controller: _passwordController,
@@ -97,7 +94,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
                   labelText: 'Contraseña',
                   prefixIcon: Icon(Icons.lock),
                   border: OutlineInputBorder(),
-                ), // InputDecoration
+                ),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -108,7 +105,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
                   }
                   return null;
                 },
-              ), // TextFormField
+              ),
               const SizedBox(height: 20),
               TextFormField(
                 controller: _confirmPasswordController,
@@ -116,7 +113,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
                   labelText: 'Confirmar Contraseña',
                   prefixIcon: Icon(Icons.lock_outline),
                   border: OutlineInputBorder(),
-                ), // InputDecoration
+                ),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -124,7 +121,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
                   }
                   return null;
                 },
-              ), // TextFormField
+              ),
               const SizedBox(height: 30),
               Row(
                 children: [
@@ -132,21 +129,21 @@ class _UserFormScreenState extends State<UserFormScreen> {
                     child: ElevatedButton(
                       onPressed: _register,
                       child: const Text('Registrar'),
-                    ), // ElevatedButton
-                  ), // Expanded
+                    ),
+                  ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: OutlinedButton(
                       onPressed: _cancel,
                       child: const Text('Cancelar'),
-                    ), // OutlinedButton
-                  ), // Expanded
+                    ),
+                  ),
                 ],
-              ), // Row
+              ),
             ],
-          ), // ListView
-        ), // Form
-      ), // Padding
-    ); // Scaffold
+          ),
+        ),
+      ),
+    );
   }
 }
