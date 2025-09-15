@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../widgets/appbar.dart';
 import '../../widgets/navigation_drawer.dart';
-// Ensure that '../../widgets/navigation_drawer.dart' exports a widget named 'CustomNavigationDrawer'.
 import '../../widgets/navigation_bottom.dart';
 import '../user/user.dart';
-import '../auth/change_password.dart';
 import '../auth/login.dart';
+
+// Importa la nueva SettingsPage
+import '../settings/settings_page.dart';
 
 class HomeScreen extends StatefulWidget {
   final String username;
@@ -30,14 +31,16 @@ class _HomeScreenState extends State<HomeScreen> {
     _pages = [
       HomeContent(username: widget.username),
       UserScreen(username: widget.username, password: widget.password),
-      const ChangePasswordScreen(),
+      const SettingsPage(), // <-- aquí ponemos SettingsPage (índice 2 = Configuración)
     ];
   }
 
   void _onDrawerItemSelected(int index) {
     setState(() {
       _currentIndex = index;
-      _pageController.jumpToPage(index);
+      // Si el índice es mayor que la cantidad de páginas, evitamos error
+      final target = index.clamp(0, _pages.length - 1);
+      _pageController.jumpToPage(target);
     });
     _scaffoldKey.currentState?.closeDrawer();
   }

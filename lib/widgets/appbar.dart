@@ -20,20 +20,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
+      title: Text(
+        title,
+        style: const TextStyle(
+          color: Color(0xFFdfa49b),
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       centerTitle: true,
       backgroundColor: Theme.of(context).primaryColor,
-      foregroundColor: Colors.white,
+      foregroundColor: Color(0xFFdfa49b),
       automaticallyImplyLeading: showBackButton,
       leading: showBackButton
           ? null
           : onMenuPressed != null
           ? IconButton(
-              icon: const Icon(Icons.menu),
+              icon: const Icon(Icons.menu, color: Color(0xFFdfa49b)),
               onPressed: onMenuPressed,
             ) // IconButton
           : null,
       actions: actions,
+      elevation: 2,
+      shadowColor: const Color(0xFF847b6d),
     ); // AppBar
   }
 }

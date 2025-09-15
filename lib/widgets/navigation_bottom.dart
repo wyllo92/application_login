@@ -15,24 +15,25 @@ class BottomNavigation extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: currentIndex,
       onTap: onTap,
-      selectedItemColor: Theme.of(context).primaryColor,
-      unselectedItemColor: Colors.grey,
+      selectedItemColor: const Color(0xFFdfa49b),
+      unselectedItemColor: const Color(0xFF847b6d),
+      backgroundColor: const Color(0xFFA3AB98),
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.home, color: Color(0xFF5a3938)),
           label: 'Inicio',
-        ), // BottomNavigationBarItem
+        ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
+          icon: Icon(Icons.person, color: Color(0xFF5a3938)),
           label: 'Perfil',
-        ), // BottomNavigationBarItem
+        ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
+          icon: Icon(Icons.settings, color: Color(0xFF5a3938)),
           label: 'Configuración',
-        ), // BottomNavigationBarItem
+        ),
       ],
-    ); // BottomNavigationBar
+    );
   }
 }

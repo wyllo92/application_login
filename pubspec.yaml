@@ -10,7 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.0.5
+  shared_preferences: ^2.0.15
   cupertino_icons: ^1.0.8
+  flutter_local_notifications: ^17.2.1
+
 
 dev_dependencies:
   flutter_test:
@@ -19,6 +25,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-assets:
-  - assets/img/logos
+  assets:
+    - assets/img/logos/
